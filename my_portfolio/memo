@@ -1,0 +1,57 @@
+     <script>
+      $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function() {
+          // スクロールの速度
+          var speed = 4000; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+    </script>
+
+      <script>
+  $(function(){
+  // #で始まるa要素をクリックした場合に処理
+  $('a[href^=#]').click(function(){
+    // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
+    var adjust = 0;
+    // スクロールの速度（ミリ秒）
+    var speed = 400;
+    // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
+    var href= $(this).attr("href");
+    // 移動先を取得 リンク先(href）のidがある要素を探して、targetに代入
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    // 移動先を調整 idの要素の位置をoffset()で取得して、positionに代入
+    var position = target.offset().top + adjust;
+    // スムーススクロール linear（等速） or swing（変速）
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+  });
+});
+</script>
+
+$(function(){
+  $('a[href^=#]').click(function(){
+    var adjust = 0;
+    var speed = 4000;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top + adjust;
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+  });
+});
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+		src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous">
+  </script>
+  <script src="/wp-content/themes/wp-lesson-04/js/script.js"></script>
